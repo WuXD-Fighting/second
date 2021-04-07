@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reqs>
+    <req >
+        <num>1</num> <!-- intialize -->
+        <time>5</time>
+        <event></event>
+        <condition></condition>
+        <action>initialized = true</action>
+    </req>
+    <req >
+        <num>26</num>
+        <time>6</time>
+        <event>configure</event>
+        <condition>initialized == true&&start = true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>3</num><!-- query -->
+        <time>3</time>
+        <event></event>
+        <condition>initialized == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>4</num><!-- release -->
+        <time>7.7</time>
+        <event></event>
+        <condition>initialized == true</condition>
+        <action>initialized = false</action>
+    </req>
+    <req >
+        <num>5</num><!-- start -->
+        <time>4</time>
+        <event></event>
+        <condition>initialized == true</condition>
+        <action>start = true</action>
+    </req>
+    <req >
+        <num>6</num><!-- runtest -->
+        <time>4</time>
+        <event></event>
+        <condition>start == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>7</num><!-- connect -->
+        <time>11</time>
+        <event></event>
+        <condition>initialized == true&&start==true[3]</condition>
+        <action>connect=connect+1</action>
+    </req>
+    <req >
+        <num>8</num><!-- disconnect -->
+        <time>4</time>
+        <event></event>
+        <condition>connect > 0 [2]</condition>
+        <action>connect =connect-1</action>
+    </req>
+    <req >
+        <num>9</num><!-- disconnect fail-->
+        <time>6</time>
+        <event></event>
+        <condition>start == true &&connect == 0</condition>
+        <action></action>
+    </req>
+        <req >
+        <num>10</num><!-- disconnect fail2-->
+        <time>8</time>
+        <event></event>
+        <condition>start == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>11</num><!-- disconnect fail3-->
+        <time>4.3</time>
+        <event></event>
+        <condition>start == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>12</num><!-- load -->
+        <time>8</time>
+        <event></event>
+        <condition>start == true</condition>
+        <action>load = true</action>
+    </req>
+    <req >
+        <num>13</num><!-- load fail -->
+        <time>7</time>
+        <event></event>
+        <condition>start == true[2]</condition>
+        <action></action>
+    </req>
+    <req>
+        <num>14</num><!-- execute -->
+        <time>7</time>
+        <event></event>
+        <condition>load == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>15</num><!-- unload -->
+        <time>9.5</time>
+        <event></event>
+        <condition>initialize==true&&start==true&&load==true[2]</condition>
+        <action>load=false</action>
+    </req>
+    <req >
+        <num>16</num><!-- load fail2 -->
+        <time>9</time>
+        <event></event>
+        <condition>initialize==true&&start==true&&load==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>17</num><!-- load fail3 -->
+        <time>9.8</time>
+        <event></event>
+        <condition>initialize==true&&start==true&&load==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>18</num><!-- unload fail-->
+        <time>8.2</time>
+        <event></event>
+        <condition>initialize==true&&start==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>19</num><!-- unload fail2-->
+        <time>8</time>
+        <event></event>
+        <condition>initialize==true&&start==true&&load==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>20</num><!-- initialize fail -->
+        <time>9</time>
+        <event></event>
+        <condition>initialize==true</condition>
+        <action></action>
+    </req>
+
+    <req >
+        <num>21</num><!-- initialize fail -->
+        <time>10</time>
+        <event></event>
+        <condition>initialize==false</condition>
+        <action></action>
+    </req>
+        <req >
+        <num>22</num><!-- configure -->
+        <time>8.8</time>
+        <event></event>
+        <condition>initialize==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>23</num><!-- configure fail -->
+        <time>5</time>
+        <event></event>
+        <condition>initialize==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>24</num><!-- query -->
+        <time>11.2</time>
+        <event></event>
+        <condition>initialize==true</condition>
+        <action></action>
+    </req>
+	<req >
+        <num>25</num><!-- query fail -->
+        <time>10.2</time>
+        <event></event>
+        <condition>initialize==true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>26</num><!-- connect fail -->
+        <time>7.1</time>
+        <event></event>
+        <condition>initialize==true&&start == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>27</num><!-- connect fail2 -->>
+        <time>8</time>
+        <event></event>
+        <condition>initialize==true&&start == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>28</num><!-- disconnect fail2 -->>
+        <time>9.3</time>
+        <event></event>
+        <condition>initialize==true&&start == true&&connected>0</condition>
+        <action></action>
+    </req>
+            <!-- 后续为新增 -->
+    <req >
+        <num>29</num>
+        <time>8.2</time>
+        <event></event>
+        <condition>initialize==true&&start == true</condition>
+        <action>new=true</action>
+    </req>
+    <req >
+        <num>31</num>
+        <time>7</time>
+        <event></event>
+        <condition>initialize==true&&start == true&&new == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>34</num>
+        <time>11.3</time>
+        <event></event>
+        <condition>initialize==true&&start == true</condition>
+        <action></action>
+    </req>
+
+    <req >
+        <num>35</num>
+        <time>9</time>
+        <event></event>
+        <condition>initialize==true&&start == true</condition>
+        <action>new2 = true</action>
+    </req>
+    <req >
+        <num>36</num>
+        <time>9.5</time>
+        <event></event>
+        <condition>initialize==true&&start == true&&new2 == true</condition>
+        <action></action>
+    </req>
+    <req >
+        <num>37</num>
+        <time>7</time>
+        <event></event>
+        <condition>initialize==true&&start == true&&new2 == true</condition>
+        <action>new2 =false</action>
+    </req>
+    <req >
+        <num>38</num>
+        <time>7</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>39</num>
+        <time>9</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>40</num>
+        <time>8</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>41</num>
+        <time>7</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>42</num>
+        <time>7</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>43</num>
+        <time>9</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+    <req >
+        <num>44</num>
+        <time>6.5</time>
+        <event></event>
+        <condition></condition>
+        <action></action>
+    </req>
+</reqs>
